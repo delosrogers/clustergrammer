@@ -32,4 +32,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: run integration tests
         run: |
-          ./integrations_test.sh
+          ./integration_test.sh
