@@ -27,8 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: move to tests directory
-        run: cd tests && ls -la
-
-      # Runs a set of commands using the runners shell
-      - name: run integration tests
-        run: ./integration_test.sh
+        run: cd tests && ls -la && ./integration_test.sh
