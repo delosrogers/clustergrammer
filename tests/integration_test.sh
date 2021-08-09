@@ -1,7 +1,7 @@
 cd ..
 docker build -t clustergrammer-test -f tests/Dockerfile .
 MONGO_PSWD=$RANDOM
-# docker network create clustergrammer_test_network
+docker network create clustergrammer_test_network || true
 echo $MONGO_PSWD
 docker run -d --network clustergrammer_test_network --name clustergrammer_test_mongodb -e MONGO_INITDB_ROOT_USERNAME=admin -e "MONGO_INITDB_ROOT_PASSWORD=${MONGO_PSWD}" mongo
 echo "MONGODB=mongodb://admin:${MONGO_PSWD}@clustergrammer_test_mongodb:27017/"

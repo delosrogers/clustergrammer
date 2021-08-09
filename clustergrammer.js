@@ -24620,7 +24620,7 @@ var Clustergrammer =
 
 	  // submit genes button
 	  $(params.root + ' .gene_search_box').on("keyup", function (e) {
-	    if (e.keyCode === 13) {
+	    if (e.ke === 13) {
 	      var search_gene = $(params.root + ' .gene_search_box').val();
 	      run_row_search(cgm, search_gene, entities);
 	    }

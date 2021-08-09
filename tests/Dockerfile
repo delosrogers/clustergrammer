@@ -1,9 +1,8 @@
 FROM debian:latest
 RUN apt-get update && apt-get install -y git
-RUN git clone --single-branch --branch test-clustergrammer https://github.com/delosrogers/clustergrammer-web /app
+
 WORKDIR /app
-RUN mkdir /app/clustergrammer/testing
-COPY clustergrammer.js /app/clustergrammer/static/testing/clustergrammer.js
+
 
 RUN apt-get update && apt-get install -y python
 RUN apt-get update && apt-get install -y python-dev
@@ -31,8 +30,9 @@ RUN pip install wsgiref==0.1.2
 RUN pip install requests==2.6.0
 
 # add code
-
-
+RUN git clone --single-branch --branch test-clustergrammer https://github.com/delosrogers/clustergrammer-web /app
+RUN mkdir /app/clustergrammer/testing
+COPY clustergrammer.js /app/clustergrammer/static/testing/clustergrammer.js
 # Build the port.
 EXPOSE 80
 
